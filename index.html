@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>La cabra alerta incendios</title>
+  <style>
+    /* Estilo general */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    /* logo y título */
+    header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Tamaño del logo */
+    header .header-container img {
+      width: 150px; 
+      height: auto;
+      margin-right: 20px;
+    }
+    /* Aumentamos el tamaño del título */
+    header h1 {
+      font-size: 3em; /* Valor aumentado (anteriormente 2.5em) */
+      color: #333;
+      margin: 0;
+    }
+    /* Contenedor principal */
+    #contenedor {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 1000px;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    /* Sección de la barra y leyenda */
+    #barra-leyenda {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    /* Barra vertical de riesgo ampliada */
+    #barra-container {
+      position: relative;
+      width: 80px;
+      height: 600px;
+      background-color: #ddd;
+      border: 2px solid #aaa;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: 20px;
+    }
+    #barra-sensor {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 0%; /* Se actualizará dinámicamente */
+      background-color: green;
+      border-radius: 10px;
+      transition: height 0.5s ease, background-color 0.5s ease;
+    }
+    /* Leyenda de colores */
+    #legend {
+      font-size: 1em;
+      color: #333;
+    }
+    #legend div {
+      margin: 5px 0;
+    }
+    .color-box {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+      border: 1px solid #000;
+    }
+    /* Contenedor del logo dinámico */
+    #logo-container {
+      text-align: center;
+      margin: 20px;
+    }
+    /* Logo del árbol (logo dinámico) */
+    #logoArbol {
+      width: 450px;
+      height: auto;
+    }
+    #mensajeHumo {
+      font-size: 1.2em;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado/Título con logo -->
+  <header>
+    <div class="header-container">
+      <img src="logo_titulo.png" alt="Logo del sitio">
+      <h1>La cabra alerta incendios</h1>
+    </div>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div id="contenedor">
+    <!-- Sección de la barra de riesgo y leyenda -->
+    <div id="barra-leyenda">
+      <div id="barra-container">
+        <div id="barra-sensor"></div>
+      </div>
+      <div id="legend">
+        <div><span class="color-box" style="background-color: green;"></span>Normal</div>
+        <div><span class="color-box" style="background-color: yellow;"></span>Riesgo Moderado</div>
+        <div><span class="color-box" style="background-color: orange;"></span>Riesgo Alto</div>
+        <div><span class="color-box" style="background-color: red;"></span>Riesgo Muy Alto</div>
+      </div>
+    </div>
+    <!-- Sección del logo dinámico del árbol -->
+    <div id="logo-container">
+      <img id="logoArbol" src="arbol.png" alt="Logo del árbol">
+      <div id="mensajeHumo"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
